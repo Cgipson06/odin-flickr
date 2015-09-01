@@ -1,0 +1,7 @@
+== README
+
+Basic implementation of a photostream populated with photos provided by the Flickr API.  Search for photos by user id.
+
+Uses the figaro gem for storing API data.
+Uses the FlickRaw gem for communicating with the Flickr API.
+A project for theodinproject.com 

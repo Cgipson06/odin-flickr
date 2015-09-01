@@ -1,0 +1,24 @@
+<h1>FlickrFeed</h1>
+<h3>Enter a users id number to see thier feed!</h3>
+
+<%= form_for :user, method: "get" do |f| %>
+  <%= f.label :id, "User ID" %>
+  <%= f.text_field :id %>
+  <%= f.submit "Search" %>
+<% end %>
+
+
+<div class="flickr">
+  <ul>
+
+    <% @photos.each do |p| %>
+      <li>
+         <% info = flickr.photos.getInfo(:photo_id => p.id) %>
+         <% url = FlickRaw.url_s(info) %>
+         <%= link_to(image_tag(url, :class => 'flickr_photo', :title => p.title, :border => 0, :size => '150x150'), url) %>
+      <% end %>
+      </li>
+
+  </ul>
+</div>
+
